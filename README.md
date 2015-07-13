@@ -35,15 +35,16 @@ AngularJS is a MVW (Model-View-Whatever) Javascript Framework for creating singl
 The AngularJS files are all located within `/app/js`, structured in the following manner:
 
 ```
-/controllers
-  _index.js   (the main module on which all controllers will be mounted, loaded in main.js)
-  example.js
-/directives
-  _index.js   (the main module on which all directives will be mounted, loaded in main.js)
-  example.js
-/services
-  _index.js   (the main module on which all services will be mounted, loaded in main.js)
-  example.js
+/exampleFeature
+  _index.js   (the main module on which all parts of the exampleFeature will be mounted, loaded in main.js)
+  exampleController.js
+  exampleDirective.js
+  exampleService.js
+/formFeature
+  _index.js   (the main module on which all parts of the formFeature will be mounted, loaded in main.js)
+  personForm.js
+  personSchema.js
+  submitForm.js
 constants.js  (any constant values that you want to make available to Angular)
 main.js       (the main file read by Browserify, also where the application is defined and bootstrapped)
 on_run.js     (any functions or logic that need to be executed on app.run)
@@ -52,6 +53,8 @@ templates.js  (this is created via Gulp by compiling your views, and will not be
 ```
 
 Controllers, services, directives, etc. should all be placed within their respective folders, and will be automatically required via their respective `_index.js` using `bulk-require`. Most other logic can be placed in an existing file, or added in new files as long as it is required inside `main.js`.
+
+All main features/stories are given their own feature folder and module. This allows you to get a good overview of the application functionlity, in contrast to controller, service, directive folder.
 
 ##### Dependency injection
 
