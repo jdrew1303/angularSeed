@@ -2,6 +2,8 @@
 
 'use strict';
 
+var angular = require('angular');
+
 describe('Unit: ExampleService', function() {
 
   var service;

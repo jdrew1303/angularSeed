@@ -2,29 +2,35 @@
 
 'use strict';
 
+var angular = require('angular');
+var Factory = require('rosie');
+
 describe('Unit: ExampleCtrl', function() {
 
-  var ctrl;
+  var controller;
 
   beforeEach(function() {
     // instantiate the app module
     angular.mock.module('app');
 
     angular.mock.inject(function($controller) {
-      ctrl = $controller('ExampleCtrl');
+      controller = $controller('ExampleController');
     });
+
+    var p = Factory.buildList('player', 10);
+    console.lo1g(p);
   });
 
   it('should exist', function() {
-    expect(ctrl).toBeDefined();
+    expect(controller).toBeDefined();
   });
 
   it('should have a number variable equal to 1234', function() {
-    expect(ctrl.number).toEqual(1234);
+    expect(controller.number).toEqual(1234);
   });
 
   it('should have a title variable equal to \'AngularJS, Gulp, and Browserify!\'', function() {
-    expect(ctrl.title).toEqual('AngularJS, Gulp, and Browserify!');
+    expect(controller.title).toEqual('AngularJS, Gulp, and Browserify!');
   });
 
 });

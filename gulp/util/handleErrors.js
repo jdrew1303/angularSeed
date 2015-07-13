@@ -6,7 +6,8 @@ module.exports = function(error) {
 
   if( !global.isProd ) {
 
-    var args = Array.prototype.slice.call(arguments);
+    var slice = [].prototype.slice;
+    var args = slice.call(arguments);
 
     // Send error to notification center with gulp-notify
     notify.onError({

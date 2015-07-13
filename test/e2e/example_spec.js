@@ -2,20 +2,22 @@
 
 'use strict';
 
+var IndexPage = require('./pages/indexPage');
+var index;
 describe('E2E: Example', function() {
 
   beforeEach(function() {
-    browser.get('/');
-    browser.waitForAngular();
+    // We create the page objects we wish to work with. These can also be
+    // page fragments (in case we have headers and footers).
+    index = new IndexPage();
   });
 
   it('should route correctly', function() {
-    expect(browser.getLocationAbsUrl()).toMatch('/');
+    //expect(browser.getLocationAbsUrl()).toMatch('/');
   });
 
   it('should show the number defined in the controller', function() {
-    var element = browser.findElement(by.css('.number-example'));
-    expect(element.getText()).toEqual('1234');
+    expect(index.number).toEqual('1234');
   });
 
 });

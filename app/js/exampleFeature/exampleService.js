@@ -1,6 +1,6 @@
 'use strict';
 
-var servicesModule = require('./_index.js');
+var exampleFeatureModule = require('./_index');
 
 /**
  * @ngInject
@@ -12,17 +12,16 @@ function ExampleService($q, $http) {
   service.get = function() {
     var deferred = $q.defer();
 
-    $http.get('apiPath').success(function(data) {
+    return $http.get('apiPath').success(function(data) {
         deferred.resolve(data);
     }).error(function(err, status) {
         deferred.reject(err, status);
     });
 
-    return deferred.promise;
   };
 
   return service;
 
 }
 
-servicesModule.service('ExampleService', ExampleService);
+exampleFeatureModule.service('ExampleService', ExampleService);

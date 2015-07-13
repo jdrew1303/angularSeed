@@ -142,6 +142,8 @@ A Gulp tasks also exists for running the test framework (discussed in detail bel
 
 This boilerplate also includes a simple framework for unit and end-to-end (e2e) testing via [Karma](http://karma-runner.github.io/) and [Jasmine](http://jasmine.github.io/). In order to test AngularJS modules, the [angular.mocks](https://docs.angularjs.org/api/ngMock/object/angular.mock) module is used.
 
+When creating test data you shouldn't hard code data into JSON files. To stop this we use [factories](https://github.com/bkeepers/rosie) and [faker](https://github.com/marak/Faker.js/). Faker is a library for generating fake data and rosie is for generating fake objects.
+
 All of the tests can be run at once with the command `gulp test`. However, the tests are broken up into two main categories:
 
 ##### End-to-End (e2e) Tests

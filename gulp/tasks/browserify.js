@@ -25,7 +25,13 @@ function buildScript(file) {
     debug: true,
     cache: {},
     packageCache: {},
-    fullPaths: true
+    fullPaths: true,
+    shim: {
+      "rosie": {
+        path: '/node_modules/rosie/src/rosie.js',
+        exports: 'rosie'
+      }
+    }
   }, watchify.args);
 
   if ( !global.isProd ) {
