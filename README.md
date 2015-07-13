@@ -178,3 +178,21 @@ An example test is provided for the following types of AngularJS modules:
 Testing AngularJS directives becomes a bit more complex involving mock data and DOM traversal, and so has been omitted from this boilerplate. This can be read about in detail [here](http://newtriks.com/2013/04/26/how-to-test-an-angularjs-directive/).
 
 All unit tests are run with `gulp unit`. When running unit tests, code coverage is simultaneously calculated and output as an HTML file to the `/coverage` directory.
+
+
+### Test Data Factories
+In test-driven development, data is one of the requirements for a successful and thorough test. In order to be able to test all use cases of a given method, object or feature, you need to be able to define multiple sets of data required for the test.
+
+This is where the data factory pattern steps into test-driven development. Data Factory (or factory in short) is a blueprint that allows us to create an object, or a collection of objects, with predefined sets of values. The factory used in tcAngularSeed is https://github.com/bkeepers/rosie.
+
+You can have multiple sets of predefined values for a single factory. In fact, you should create them for each use case of the factory in order to be able to test all use cases of a given method, object or feature.
+
+####Effective Patterns on Data Factory
+There are several best practices for using data factories that will improve performance and ensure test consistency if applied properly. The patterns below are ordered based on their importance:
+
+- Factory linting (Test againt validation logic that you have first to make sure you dont have a malformed object).
+- Just enough data (Only add in enough fields to handle testing. Do not add in fields that are not used by the application.)
+- Build over create (Try not to pass in a constructor function if possible as there is an overhead associated with creating the parent object instead of just creating a plain JSON object.
+- Explicit data testing (Only override data that you need for the exact test. This reduces the brittleness of your tests to changing model data.)
+- Fixed time-based testing (Use explicitly coded times over the likes of Date.now(). Moment.js may help here.)
+
