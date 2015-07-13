@@ -183,7 +183,7 @@ All unit tests are run with `gulp unit`. When running unit tests, code coverage 
 ### Test Data Factories
 In test-driven development, data is one of the requirements for a successful and thorough test. In order to be able to test all use cases of a given method, object or feature, you need to be able to define multiple sets of data required for the test.
 
-This is where the data factory pattern steps into test-driven development. Data Factory (or factory in short) is a blueprint that allows us to create an object, or a collection of objects, with predefined sets of values. The factory used in tcAngularSeed is https://github.com/bkeepers/rosie.
+This is where the data factory pattern steps into test-driven development. Data Factory (or factory in short) is a blueprint that allows us to create an object, or a collection of objects, with predefined sets of values. The factory used in tcAngularSeed is [rosie.js](https://github.com/bkeepers/rosie). To help you rapidly generate data there is a helper library included that generates random data; [Faker.js](https://github.com/marak/Faker.js/). 
 
 You can have multiple sets of predefined values for a single factory. In fact, you should create them for each use case of the factory in order to be able to test all use cases of a given method, object or feature.
 
