@@ -1,4 +1,3 @@
-var _ = require("lodash");
 var Factory = require('rosie').Factory;
 
 // The actual factory. See https://github.com/bkeepers/rosie for documentation.
