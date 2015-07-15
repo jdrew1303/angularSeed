@@ -3,6 +3,7 @@
 'use strict';
 
 var angular = require('angular');
+var angularMocks = require('angular-mocks');
 
 describe('Unit: ExampleService', function() {
 

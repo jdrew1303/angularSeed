@@ -13,8 +13,9 @@ module.exports = function(config) {
 
     preprocessors: {
       'app/js/**/*.js': ['browserify', 'babel', 'coverage'],
-      'test/unit/**/*.js': ['browserify', 'babel'],
-      'test/factorySpec.js': ['browserify', 'babel'],
+      'test/unit/**/*.js': ['browserify', 'babel',],
+      'factories/**/*.js': ['browserify', 'babel',],
+      'test/factorySpec.js': ['browserify', 'babel',]
     },
 
     browsers: ['Chrome'],
@@ -48,12 +49,6 @@ module.exports = function(config) {
     logLevel: config.LOG_INFO,
 
     files: [
-      // 3rd-party resources
-      'node_modules/lodash/index.js',
-      'node_modules/rosie/src/rosie.js',
-      'node_modules/angular/angular.min.js',
-      'node_modules/angular-mocks/angular-mocks.js',
-
       // app-specific code
       'app/js/main.js',
 

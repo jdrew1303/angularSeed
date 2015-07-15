@@ -1,4 +1,4 @@
-
+var _       = require('lodash-node');
 var Factory = require('rosie').Factory;
 
 // This should be run as a seperate test suite before all other tests. This means
@@ -7,7 +7,7 @@ var Factory = require('rosie').Factory;
 // the list of factories and make sure that they dont throw errors during the
 // building of a list or a single factory. These are not to be confused with
 // Angular factories.
-[].map.call(Object.keys(Factory.factories), function(factoryName) {
+_.map(_.keys(Factory.factories), function(factoryName) {
 
   describe('The ' + factoryName + ' factory', function() {
 

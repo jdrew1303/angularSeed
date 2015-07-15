@@ -3,7 +3,8 @@
 'use strict';
 
 var angular = require('angular');
-var Factory = require('rosie');
+var angularMocks = require('angular-mocks');
+var Factory = require('rosie').Factory;
 
 describe('Unit: ExampleCtrl', function() {
 
@@ -11,13 +12,13 @@ describe('Unit: ExampleCtrl', function() {
 
   beforeEach(function() {
     // instantiate the app module
-    angular.mock.module('app');
+    angular.mock.module('tc.exampleFeature');
 
     angular.mock.inject(function($controller) {
       controller = $controller('ExampleController');
     });
 
-    var p = Factory.buildList('player', 10);
+    var p = Factory.buildList('person', 10);
     console.log(p);
   });
 
