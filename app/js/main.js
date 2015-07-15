@@ -11,14 +11,14 @@ require('./formFeature/_index');
 // create and bootstrap application
 angular.element(document).ready(function() {
 
-  var requires = [
+  var moduleDependencies = [
     'tc.core',  // required by all applications and most modules.
     'tc.exampleFeature',
     'tc.formFeature'
   ];
 
   // mount on window for testing
-  window.app = angular.module('app', requires);
+  window.app = angular.module('app', moduleDependencies);
 
   angular.module('app').constant('AppSettings', require('./constants'));
 
