@@ -18,7 +18,7 @@ describe('Unit: ExampleCtrl', function() {
     });
 
     var p = Factory.buildList('player', 10);
-    console.lo1g(p);
+    console.log(p);
   });
 
   it('should exist', function() {
