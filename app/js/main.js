@@ -11,6 +11,7 @@ window.ObjectPath = require('objectpath');
 require('angular-sanitize');
 require('bootstrap-sass');
 require('angular-schema-form');
+require('../../node_modules/angular-schema-form/dist/bootstrap-decorator')
 
 // angular modules
 require('angular-ui-router');
@@ -24,6 +25,9 @@ require('./formFeature/_index');
 // create and bootstrap application
 angular.element(document).ready(function() {
 
+  // We should break this out into an app.core module and leave
+  // the tc.featureName be in the main application to show the
+  // blocks of the application.
   var requires = [
     'ui.router',
     'templates',
