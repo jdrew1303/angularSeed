@@ -2,6 +2,7 @@
 
 var istanbul = require('browserify-istanbul');
 var isparta  = require('isparta');
+var _        = require('lodash-node');
 
 module.exports = function(config) {
 
@@ -62,7 +63,25 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: true
+    get singleRun(){
+
+      var CI_ENVIRONMENTAL_VARS = [
+        'CI',
+        'CIRCLECI',
+        'TRAVIS',
+        'SEMAPHORE',
+        'SNAP_CI',
+        'TEAMCITY_VERSION',
+        'JENKINS_URL',
+        'MAGNUM'
+      ];
+
+      var isKnownCiService = _.map(CI_ENVIRONMENTAL_VARS, function(name){
+        return (process.env[name]);
+      })
+
+      return !(_.isEqual(_.indexOf(isKnownCiService, true), -1));
+    }
 
   });
 
