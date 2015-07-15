@@ -3,6 +3,7 @@
 // JQuery requires some extra tweaking as it is expected to be
 // on the window.$ element.
 window.$    = window.jQuery = require('jquery')
+
 var angular = require('angular');
 
 require('angular-schema-form');
@@ -18,6 +19,7 @@ require('../templates');
 var bulk = require('bulk-require');
 
 var moduleDependencies = [
+  'underscore',
   'ui.router',
   'templates',
   'schemaForm'
