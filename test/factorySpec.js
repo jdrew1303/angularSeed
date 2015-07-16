@@ -1,5 +1,8 @@
 var _       = require('lodash-node');
+var bulk    = require('bulk-require');
 var Factory = require('rosie').Factory;
+bulk(__dirname, ['../factory/**/*.js']);
+
 
 // This should be run as a seperate test suite before all other tests. This means
 // that if our factories are broken we fail fast and catch it before the main

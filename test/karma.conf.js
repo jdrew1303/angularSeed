@@ -34,7 +34,7 @@ module.exports = function(config) {
         'bulkify',
         istanbul({
           instrumenter: isparta,
-          ignore: ['**/node_modules/**', '**/test/**']
+          ignore: ['**/node_modules/**', '**/test/**', 'factories/**/*.js']
         })
       ]
     },
