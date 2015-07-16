@@ -1,6 +1,8 @@
 angularjs-gulp-browserify-boilerplate
 =====================================
 
+![build status](https://magnum-ci.com/status/c96b783792501394ffe3499a9c9e0528.png)
+
 A boilerplate using AngularJS, SASS, Gulp, and Browserify that also utilizes [these best AngularJS practices](https://github.com/toddmotto/angularjs-styleguide)  and Gulp best practices from [this resource](https://github.com/greypants/gulp-starter).
 
 ---
