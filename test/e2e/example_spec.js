@@ -13,11 +13,11 @@ describe('E2E: Example', function() {
   });
 
   it('should route correctly', function() {
-    //expect(browser.getLocationAbsUrl()).toMatch('/');
+    expect(browser.getLocationAbsUrl()).toMatch('/');
   });
 
   it('should show the number defined in the controller', function() {
-    expect(index.number).toEqual('1234');
+    expect(index.numberText.getText()).toEqual('1234');
   });
 
 });

@@ -4,7 +4,6 @@ var IndexPage = function () {
   browser.get('/');
 };
 
-
 IndexPage.prototype = Object.create({}, {
   numberText: { get: function () { return element(by.css('.number-example')); }},
 
