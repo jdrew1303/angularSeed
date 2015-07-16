@@ -58,7 +58,7 @@ module.exports = function(config) {
 
       // test files
       'test/factorySpec.js',
-      'test/unit/**/*.js'
+      'test/unit/**/*Spec.js'
     ],
 
     // Continuous Integration mode
