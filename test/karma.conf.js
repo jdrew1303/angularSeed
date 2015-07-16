@@ -19,7 +19,10 @@ module.exports = function(config) {
       'test/factorySpec.js': ['browserify', 'babel',]
     },
 
-    browsers: ['Chrome'],
+    browsers: [
+      //'Chrome',
+      'PhantomJS'
+    ],
 
     reporters: ['progress', 'coverage'],
 
@@ -81,6 +84,11 @@ module.exports = function(config) {
       })
 
       return !(_.isEqual(_.indexOf(isKnownCiService, true), -1));
+    },
+
+    phantomjsLauncher: {
+      // Have phantomjs exit if a ResourceError is encountered (useful if karma exits without killing phantom)
+      exitOnResourceError: true
     }
 
   });

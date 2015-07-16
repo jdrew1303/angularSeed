@@ -83,7 +83,10 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^0.1.1",
     "watchify": "^2.0.0",
-    "browserify-shim": "~3.8.9"
+    "browserify-shim": "~3.8.9",
+    "ng-mock-e2e": "~0.1.1",
+    "phantomjs": "~1.9.17",
+    "karma-phantomjs-launcher": "~0.2.0"
   },
   "scripts": {
     "pretest": "npm install",
