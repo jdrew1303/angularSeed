@@ -69,7 +69,8 @@ module.exports = {
         'moduleName': 'Weather'
       }
     ],
-    'dest' : 'app/js/apis/'
+    'dest' : 'app/js/apis/',
+    'cleanGlob': 'app/js/apis/**/!(*_index|*Spec)*(.js|.json|.yaml)'
   }
 
 };
