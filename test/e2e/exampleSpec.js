@@ -3,6 +3,8 @@
 'use strict';
 
 var IndexPage = require('./pages/indexPage');
+//require('angular-mocks');
+
 var index;
 describe('E2E: Example', function() {
 
@@ -19,5 +21,12 @@ describe('E2E: Example', function() {
   it('should show the number defined in the controller', function() {
     expect(index.numberText.getText()).toEqual('1234');
   });
+
+  //it('should add a mock service', function(){
+  //  var backEndMockBuilder = require('./helpers/backEndMocks');
+  //  var personStub = require('./stubs/exampleStubService').person;
+  //  var stub = backEndMockBuilder.build(personStub);
+  //  browser.addMockModule('httpBackEndStub', stub);
+  //})
 
 });

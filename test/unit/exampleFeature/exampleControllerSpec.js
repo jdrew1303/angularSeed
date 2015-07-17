@@ -17,9 +17,6 @@ describe('Unit: ExampleCtrl', function() {
     angular.mock.inject(function($controller) {
       controller = $controller('ExampleController');
     });
-
-    var p = Factory.buildList('person', 10);
-    console.log(p);
   });
 
   it('should exist', function() {
