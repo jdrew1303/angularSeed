@@ -6,8 +6,10 @@ exports.config = {
 
   baseUrl: 'http://localhost:3002/',
 
+  rootElement: 'body',
+
   multiCapabilities: [
-    { browserName: 'firefox', shardTestFiles: true, maxInstances: 2 },
+    //{ browserName: 'firefox', shardTestFiles: true, maxInstances: 2 },
     { browserName: 'chrome',  shardTestFiles: true, maxInstances: 2 }
   ],
 
