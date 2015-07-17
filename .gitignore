@@ -30,4 +30,5 @@ templates.js
 .idea
 
 # Generated Apis
-/app/js/apis/!(*_index).js
+app/js/apis/**/*
+!app/js/apis/_index.js
