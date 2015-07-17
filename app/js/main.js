@@ -1,6 +1,7 @@
 'use strict';
 
 var angular = require('angular');
+require('ng-mock-e2e');
 require('./tcCore/_index');
 require('./apis/_index');
 
@@ -14,7 +15,7 @@ angular.element(document).ready(function() {
 
   var moduleDependencies = [
     'tc.core',  // required by all applications and most modules.
-    'tc.apis'
+    'tc.apis',
     'tc.exampleFeature',
     'tc.formFeature'
   ];
