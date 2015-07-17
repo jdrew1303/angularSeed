@@ -196,3 +196,5 @@ There are several best practices for using data factories that will improve perf
 - Explicit data testing (Only override data that you need for the exact test. This reduces the brittleness of your tests to changing model data.)
 - Fixed time-based testing (Use explicitly coded times over the likes of Date.now(). Moment.js may help here.)
 
+### Generating client libraries from Swagger enabled servers
+Included is a gulp task to generate angular services automatically for swagger enabled servers. In your gulp config file (located in `gulp/config.js`) add the url of the server, the name of the swagger yaml/json file, and the name you would like for the service (this will be prepended with 'Service' so there is no need to add this). Once this is done you call `gulp api` to have all apis built. Currently it only supports client libraries from remote servers, soon this will be expanded to local support, with the ability to generate generic api stubs and partially generate test-data factories.
