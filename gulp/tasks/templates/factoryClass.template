@@ -1,0 +1,29 @@
+var Factory = require('rosie').Factory;
+var faker   = require('faker');
+var _       = require('lodash-node');
+<%_.map(swagger, function(rawModels){ _.forOwn(rawModels, function(model, modelName){ %>
+
+  ;Factory.define('<%=_.capitalize(_.camelCase(modelName))%>') <% _.forOwn(model.properties, function(property, propertyName){ if(property.type == "array"){ %>
+      .attr('<%=propertyName%>', ['<%=_.capitalize(_.camelCase(propertyName))%>'], addChildFactory('<%=_.capitalize(_.camelCase(propertyName))%>')<%} else if(property["enum"]){ %>
+      // [<%=property.type%>:<%=property.format%>] <% if(property.description){%>[DESCRIPTION: <%=property.description.replace(/(\r\n|\n|\r)/gm,"")%>]<%};%> <%if(property.example){%>[EXAMPLE: <%=property.example%>]<%};%>
+      .attr('<%=propertyName%>', function(){
+        var enums = [
+          <% _.map(property["enum"],function(enumm){ %> '<%=enumm%>', <%})%>
+        ];
+        return faker.random.arrayElement(enums);
+      }) <% } else { %>
+      .attr('<%=propertyName%>', ) // [<%=property.type%>:<%=property.format%>] <% if(property.description){%>[DESCRIPTION: <%=property.description.replace(/(\r\n|\n|\r)/gm,"")%>]<%};%> <%if(property.example){%>[EXAMPLE: <%=property.example%>]<%};%> <%}
+  })
+})
+}) %>
+
+function addChildFactory(factoryType){
+	return function(item) {
+	  item = item || new Array(4);
+	  return _.map(item, function(data){
+	  		return Factory.attributes(factoryType, data);
+		});
+	}
+}
+
+module.exports = Factory;
