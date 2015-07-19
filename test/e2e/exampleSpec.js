@@ -3,7 +3,6 @@
 'use strict';
 
 var IndexPage = require('./pages/indexPage');
-//require('angular-mocks');
 
 var index;
 describe('E2E: Example', function() {
