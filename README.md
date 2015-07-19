@@ -196,5 +196,9 @@ There are several best practices for using data factories that will improve perf
 - Explicit data testing (Only override data that you need for the exact test. This reduces the brittleness of your tests to changing model data.)
 - Fixed time-based testing (Use explicitly coded times over the likes of Date.now(). Moment.js may help here.)
 
-### Generating client libraries from Swagger enabled servers
-Included is a gulp task to generate angular services automatically for swagger enabled servers. In your gulp config file (located in `gulp/config.js`) add the url of the server, the name of the swagger yaml/json file, and the name you would like for the service (this will be prepended with 'Service' so there is no need to add this). Once this is done you call `gulp api` to have all apis built. Currently it only supports client libraries from remote servers, soon this will be expanded to local support, with the ability to generate generic api stubs and partially generate test-data factories.
+### Generating client libraries and test data factories from Swagger enabled servers
+Included is a gulp task to generate angular services automatically for swagger enabled servers. In your gulp config file (located in `gulp/config.js`) add the url of the server, the name of the swagger yaml/json file, and the name you would like for the service (this will be prepended with 'Service' so there is no need to add this). Once this is done you call `gulp api` to have all apis built.
+
+Generation of test data factories involves a bit of work on the part of the user. Calling `gulp factories` will generate factories for all APIs that you have defined in your gulp config file. Unfortunately most swagger files do not contain enough information to allow the generation of the faker statements (this is the helper library that handles generating fake data. You need to manually fill in these fields in you files. You also need to check the factories to make sure that child factories have been handled properly (this is not usually a problem if the swagger documentation is correctly written and naming schemes have been adhered to. You may also be able to reduce the number of Factories by using inheritance. Over time the library will become more precise.
+
+
