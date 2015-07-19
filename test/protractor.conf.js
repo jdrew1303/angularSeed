@@ -10,7 +10,13 @@ exports.config = {
 
   multiCapabilities: [
     //{ browserName: 'firefox', shardTestFiles: true, maxInstances: 2 },
-    { browserName: 'chrome',  shardTestFiles: true, maxInstances: 2 }
+    {
+      browserName: 'chrome',
+      shardTestFiles: true,
+      maxInstances: 2,
+      chromeOptions: {args: ['incognito', 'disable-extensions', 'start-maximized', 'enable-crash-reporter-for-testing']},
+      loggingPrefs: {browser: 'ALL'}
+    }
   ],
 
   framework: 'jasmine',
