@@ -59,14 +59,14 @@ module.exports = {
   'swagger': {
     'src' : [
       {
-        'url': 'https://raw.githubusercontent.com/swagger-api/swagger-spec/master/examples/v2.0/yaml/',
-        'filename': 'api-with-examples.yaml',
-        'moduleName': 'Uber'
+        'url': 'https://raw.githubusercontent.com/APIs-guru/api-models/master/clickmeter.com/v2/',
+        'filename': 'swagger.json',
+        'moduleName': 'ClickMeter'
       },
       {
-        'url': 'https://raw.githubusercontent.com/apigee-127/a127-samples/master/weather-a127-resources/api/swagger/',
-        'filename': 'swagger.yaml',
-        'moduleName': 'Weather'
+        'url': 'https://raw.githubusercontent.com/APIs-guru/api-models/master/googleapis.com/gmail/v1/',
+        'filename': 'swagger.json',
+        'moduleName': 'Gmail'
       }
     ],
     'dest' : 'app/js/apis/',

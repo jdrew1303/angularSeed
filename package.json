@@ -87,7 +87,9 @@
     "uglifyify": "^2.5.0",
     "watchify": "^2.0.0",
     "vinyl-buffer": "~1.0.0",
-    "vinyl-source-stream": "~1.1.0"
+    "vinyl-source-stream": "~1.1.0",
+    "is_js": "~0.7.4",
+    "swagger-parser": "~2.5.0"
   },
   "scripts": {
     "pretest": "npm install",
