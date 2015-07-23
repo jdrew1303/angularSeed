@@ -60,7 +60,7 @@ function buildScript(file) {
       .pipe(gulpif(global.isProd, streamify(uglify({
         compress: { drop_console: true }
       }))))
-      .pipe(gulpif(createSourcemap, sourcemaps.write('./')))
+      .pipe(sourcemaps.write())
       .pipe(gulp.dest(config.scripts.dest))
       .pipe(gulpif(browserSync.active, browserSync.reload({ stream: true, once: true })));
   }

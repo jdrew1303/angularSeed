@@ -7,8 +7,8 @@ gulp.task('dev', ['clean'], function(cb) {
 
   cb = cb || function() {};
 
-  global.isProd = false;
+  global.isProd = true;
 
-  runSequence(['styles', 'images', 'fonts', 'views', 'browserify'], 'watch', cb);
+  runSequence(['styles', 'images', 'fonts', 'views', 'api', 'browserify'], 'watch', cb);
 
 });
