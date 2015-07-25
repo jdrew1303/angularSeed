@@ -7,4 +7,4 @@ var bulk = require('bulk-require');
 // a single point to mount on our application.
 module.exports = angular.module('tc.apis', []);
 
-bulk(__dirname, ['./**/!(*_index|*Spec|*.json|*.yaml).js']);
+bulk(__dirname, ['./**/!(*_index|*Spec).js']);

@@ -3,8 +3,8 @@
 var angular = require('angular');
 require('ng-mock-e2e');
 require('./tcCore/_index');
-require('./apis/_index');
 
+require('./apis/_index');
 
 require('./exampleFeature/_index');
 require('./formFeature/_index');
@@ -15,9 +15,9 @@ angular.element(document).ready(function() {
 
   var moduleDependencies = [
     'tc.core',  // required by all applications and most modules.
-    'tc.apis',
     'tc.exampleFeature',
-    'tc.formFeature'
+    'tc.formFeature',
+    'tc.apis'
   ];
 
   // mount on window for testing

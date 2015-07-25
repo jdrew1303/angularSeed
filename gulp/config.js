@@ -67,6 +67,11 @@ module.exports = {
         'url': 'https://raw.githubusercontent.com/APIs-guru/api-models/master/googleapis.com/gmail/v1/',
         'filename': 'swagger.json',
         'moduleName': 'Gmail'
+      },
+      {
+        'url': 'http://localhost:8080/',
+        'filename' : 'swagger.json',
+        'moduleName': 'Dropwizard'
       }
     ],
     'dest' : 'app/js/apis/',

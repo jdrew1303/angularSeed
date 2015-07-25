@@ -1,28 +1,15 @@
 'use strict';
 
-var exampleFeatureModule = require('./_index');
-
+var formFeatureModule = require('./_index');
+require("../apis/_index");
 
 /**
  * @ngInject
  */
-function ExampleService($q, $http) {
+function DropwizardApiService(DropwizardService) {
 
-  var service = {};
-
-  service.get = function() {
-    var deferred = $q.defer();
-
-    return $http.get('apiPath').success(function(data) {
-        deferred.resolve(data);
-    }).error(function(err, status) {
-        deferred.reject(err, status);
-    });
-
-  };
-
-  return service;
+  return new DropwizardService('http://localhost:8080');
 
 }
 
-exampleFeatureModule.service('ExampleService', ExampleService);
+formFeatureModule.factory('DropwizardApiService', DropwizardApiService);
