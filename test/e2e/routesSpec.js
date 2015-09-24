@@ -2,7 +2,7 @@
 
 'use strict';
 
-describe('E2E: Routes', function() {
+xdescribe('E2E: Routes', function() {
 
   it('should have a working home route', function() {
     browser.get('#/');

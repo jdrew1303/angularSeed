@@ -5,7 +5,7 @@
 var IndexPage = require('./pages/indexPage');
 
 var index;
-describe('E2E: Example', function() {
+xdescribe('E2E: Example', function() {
 
   beforeEach(function() {
     // We create the page objects we wish to work with. These can also be

@@ -54,28 +54,5 @@ module.exports = {
   'test': {
     'karma': 'test/karma.conf.js',
     'protractor': 'test/protractor.conf.js'
-  },
-
-  'swagger': {
-    'src' : [
-      {
-        'url': 'https://raw.githubusercontent.com/APIs-guru/api-models/master/clickmeter.com/v2/',
-        'filename': 'swagger.json',
-        'moduleName': 'ClickMeter'
-      },
-      {
-        'url': 'https://raw.githubusercontent.com/APIs-guru/api-models/master/googleapis.com/gmail/v1/',
-        'filename': 'swagger.json',
-        'moduleName': 'Gmail'
-      },
-      {
-        'url': 'http://localhost:8080/',
-        'filename' : 'swagger.json',
-        'moduleName': 'Dropwizard'
-      }
-    ],
-    'dest' : 'app/js/apis/',
-    'cleanGlob': 'app/js/apis/**/!(*_index|*Spec)*(.js|.json|.yaml)'
   }
-
 };

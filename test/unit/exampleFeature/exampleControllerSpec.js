@@ -6,7 +6,7 @@ var angular = require('angular');
 var angularMocks = require('angular-mocks');
 var Factory = require('rosie').Factory;
 
-describe('Unit: ExampleCtrl', function() {
+xdescribe('Unit: ExampleCtrl', function() {
 
   var controller;
 

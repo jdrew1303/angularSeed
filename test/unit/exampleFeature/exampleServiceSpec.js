@@ -5,7 +5,7 @@
 var angular = require('angular');
 var angularMocks = require('angular-mocks');
 
-describe('Unit: ExampleService', function() {
+xdescribe('Unit: ExampleService', function() {
 
   var service;
 
