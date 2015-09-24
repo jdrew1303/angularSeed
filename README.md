@@ -71,6 +71,7 @@ needs to be added directly before any Angular functions/modules. The Gulp tasks 
 ---
 
 ### SASS
+__ This is not needed for submission. __
 
 SASS, standing for 'Syntactically Awesome Style Sheets', is a CSS extension language adding things like extending, variables, and mixins to the language. This boilerplate provides a barebones file structure for your styles, with explicit imports into `app/styles/main.scss`. A Gulp task (discussed later) is provided for compilation and minification of the stylesheets based on this file.
 
@@ -125,6 +126,8 @@ All of the Gulp processes mentioned above are run automatically when any of the 
 
 ##### Production Task
 
+__ This is not needed for submission __
+
 Just as there is the `gulp dev` task for development, there is also a `gulp prod` task for putting your project into a production-ready state. This will run each of the tasks, while also adding the image minification task discussed above. There is also an empty `gulp deploy` task that is included when running the production task. This deploy task can be fleshed out to automatically push your production-ready site to your hosting setup.
 
 **Reminder:** When running the production task, gulp will not fire up the express server and serve your index.html. This task is designed to be run before the `deploy` step that may copy the files from `/build` to a production web server.
@@ -140,6 +143,7 @@ A Gulp tasks also exists for running the test framework (discussed in detail bel
 ---
 
 ### Testing
+__ This is not needed for submission __
 
 This boilerplate also includes a simple framework for unit and end-to-end (e2e) testing via [Karma](http://karma-runner.github.io/) and [Jasmine](http://jasmine.github.io/). In order to test AngularJS modules, the [angular.mocks](https://docs.angularjs.org/api/ngMock/object/angular.mock) module is used.
 
@@ -148,6 +152,7 @@ When creating test data you shouldn't hard code data into JSON files. To stop th
 All of the tests can be run at once with the command `gulp test`. However, the tests are broken up into two main categories:
 
 ##### End-to-End (e2e) Tests
+__ This is not needed for submission __
 
 e2e tests, as hinted at by the name, consist of tests that involve multiple modules or require interaction between modules, similar to integration tests. These tests are carried out using the Angular library [Protractor](https://github.com/angular/protractor), which also utilizes Jasmine. The goal is to ensure that the flow of your application is performing as designed from start to finish.
 
@@ -166,6 +171,7 @@ All e2e tests are run with `gulp protractor`. The command `npm run-script prepro
 - the Protractor library used for the end-to-end tests may require installing the [Java JDK](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html) beforehand.
 
 ##### Unit Tests
+__ This is not needed for submission __
 
 Unit tests are used to test a single module (or "unit") at a time in order to ensure that each module performs as intended individually. In AngularJS this could be thought of as a single controller, directive, filter, service, etc. That is how the unit tests are organized in this boilerplate.
 
@@ -195,10 +201,3 @@ There are several best practices for using data factories that will improve perf
 - Build over create (Try not to pass in a constructor function if possible as there is an overhead associated with creating the parent object instead of just creating a plain JSON object.
 - Explicit data testing (Only override data that you need for the exact test. This reduces the brittleness of your tests to changing model data.)
 - Fixed time-based testing (Use explicitly coded times over the likes of Date.now(). Moment.js may help here.)
-
-### Generating client libraries and test data factories from Swagger enabled servers
-Included is a gulp task to generate angular services automatically for swagger enabled servers. In your gulp config file (located in `gulp/config.js`) add the url of the server, the name of the swagger yaml/json file, and the name you would like for the service (this will be prepended with 'Service' so there is no need to add this). Once this is done you call `gulp api` to have all apis built.
-
-Generation of test data factories involves a bit of work on the part of the user. Calling `gulp factories` will generate factories for all APIs that you have defined in your gulp config file. Unfortunately most swagger files do not contain enough information to allow the generation of the faker statements (this is the helper library that handles generating fake data. You need to manually fill in these fields in you files. You also need to check the factories to make sure that child factories have been handled properly (this is not usually a problem if the swagger documentation is correctly written and naming schemes have been adhered to. You may also be able to reduce the number of Factories by using inheritance. Over time the library will become more precise.
-
-
